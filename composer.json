@@ -1,41 +1,46 @@
 {
-    "name": "spatie/:package_name",
-    "description": ":package_description",
+    "name": "spatie/laravel-api-logger",
+    "description": ":description",
     "keywords": [
         "spatie",
-        ":package_name"
+        "laravel-api-logger"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/spatie/laravel-api-logger",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "name": "Bobby Bouwmann",
+            "email": "bobbybouwmann@gmail.com",
+            "homepage": "https://bobbybouwmann.nl",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.3"
+        "php": "^7.3",
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/config": "~5.8.0",
+        "illuminate/log": "^5.8",
+        "illuminate/support": "~5.8.0"
     },
     "require-dev": {
+        "ext-json": "*",
         "larapack/dd": "^1.0",
+        "orchestra/testbench": "^3.8",
         "phpunit/phpunit": "^8.2"
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Spatie\\ApiLogger\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Spatie\\ApiLogger\\Tests\\": "tests"
         }
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
     },
     "config": {
         "sort-packages": true
@@ -43,11 +48,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
-            }
+                "Spatie\\ApiLogger\\ApiLoggerServiceProvider"
+            ]
         }
     }
 }
