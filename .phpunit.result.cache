@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":239:{a:2:{s:7:"defects";a:1:{s:52:"Spatie\ApiLogger\Tests\ApiLoggerTest::testUsingTrait";i:4;}s:5:"times";a:2:{s:47:"Spatie\Skeleton\Tests\ExampleTest::true_is_true";d:0.002;s:52:"Spatie\ApiLogger\Tests\ApiLoggerTest::testUsingTrait";d:0.007;}}}

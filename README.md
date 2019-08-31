@@ -59,9 +59,33 @@ We publish all received postcards [on our company website](https://spatie.be/en/
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie).
 All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+
+
+## Usage right now
+
+```
+// Some service provider
+
+use ApiLogger;
+
+public function register()
+{
+    $this->app->singleton(\GuzzleHttp\Client::class, function (Application $app) {
+        $handlerStack = HandlerStack::create();
+
+        $this->addLoggingToHandlerStack($handlerStack);
+
+        return new GuzzleHttp\Client([
+            'handler' => $handlerStack,
+        ]);
+    });
+}
+```
